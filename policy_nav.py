@@ -31,6 +31,7 @@ class Policy(torch.nn.Module):
     
     def forward(self, x):
         # x [seq_len, state_dim]
+        print(f'DEBUG: {x.shape}')
         x = x.unsqueeze(0)
         x = x.permute(1, 0) # [state_dim, seq_len]
         a = self.net(x)
