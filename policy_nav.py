@@ -31,11 +31,13 @@ class Policy(torch.nn.Module):
     
     def forward(self, x):
         # x [seq_len, state_dim]
-        print(f'DEBUG: {x.shape}')
-        x = x.unsqueeze(0)
-        x = x.permute(1, 0) # [state_dim, seq_len]
+        x = x.unsqueeze(0).unsqueeze(0)
+        x = x.permute(0, 2, 1) # [state_dim, seq_len]
+        # print(f'Debug:{x.shape}')
         a = self.net(x)
         return a
+
+
 
 class PolicyMotionController():
     def __init__(self, goal_pos, initial_pos, file_path, gazebo_sim):

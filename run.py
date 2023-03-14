@@ -111,7 +111,8 @@ if __name__ == "__main__":
     # nav_as.send_goal(mb_goal)
 
     # policy_file = './nsra_5gen_pop2.pth'
-    policy_file = "./nsra-pop12_gen50.pth"
+    # policy_file = "./nsra-pop12_gen50.pth"
+    policy_file = "./nsra-pop12_gen100.pth"
     # policy_file = "./nsra-pop8_gen10.pth"
     ipos = ' '.join(str(i) for i in INIT_POSITION)
     gpos = ' '.join(str(g) for g in GOAL_POSITION)
